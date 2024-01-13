@@ -1,0 +1,50 @@
+<!--index.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="cu-card case no-card">
+    <text class="flex solid-bottom padding align-start" style="font-size:130%;font-weight:700">
+      异常信息
+    </text>
+
+    <view wx:for="{{dataList}}" wx:key="index" class="cu-item shadow">
+      <view wx:if="{{item.id != 'winddirection'}}">
+        <view wx:if="{{item.value<item.lowThreshold}}" class="flex padding align-start">
+          <image src="/assets/images/safe.png" style="width:35px;height: 35px;"></image>
+          <view style="position: absolute; display: flex;flex-direction: column;left:22%;">
+            <text class="text-df text-blue">{{item.name}}过低</text>
+            <text class="text-sm margin-top-sm text-grey">低于预警值 {{ item.lowThreshold - item.value}} {{item.unit}}</text>
+          </view>
+        </view>
+        <view wx:elif="{{item.value>item.highThreshold}}" class="flex padding align-start">
+          <image src="/assets/images/danger.png" style="width:35px;height: 35px;"></image>
+          <view style="position: absolute; display: flex;flex-direction: column;left:22%;">
+            <text class="text-df text-red">{{item.name}}过高</text>
+            <text class="text-sm margin-top-sm text-grey">高于预警值 {{ item.value - item.highThreshold}} {{item.unit}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="flex solid-bottom padding align-center">
+      <text style=" font-size:130%;font-weight:700">气象站</text>
+      <button class="cu-btn round bg-orange shadow" style="left:30%" bind:tap="gotoSetting">设置</button>
+      <button class="cu-btn round bg-blue shadow" style="left:40%" bind:tap="gotoDataReview">数据分析</button>
+    </view>
+    <view class="cu-list grid col-2 grid-item grid-container" style="border-radius: 10px 10px 10px 10px;">
+      <view class="cu-item" wx:for="{{dataList}}" wx:key="index">
+        <image class="icon" src="{{item.image}}"></image>
+        <text class="name">{{item.name}}</text>
+        <text wx:if="{{item.id == 'winddirection'}}" class="info" style="color: green;">
+          {{item.value}}{{item.unit}}
+        </text>
+        <text wx:elif="{{item.id != 'winddirection' && item.value<item.lowThreshold}}" class="info" style="color: blue;">
+          {{item.value}}{{item.unit}}
+        </text>
+        <text wx:elif="{{item.id != 'winddirection' && item.value>item.highThreshold}}" class="info" style="color: red;">
+          {{item.value}}{{item.unit}}
+        </text>
+        <text wx:else class="info" style="color: green">
+          {{item.value}}{{item.unit}}
+        </text>
+      </view>
+    </view>
+  </view>
+</scroll-view>

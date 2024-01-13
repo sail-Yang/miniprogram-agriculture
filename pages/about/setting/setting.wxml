@@ -1,0 +1,94 @@
+<!--pages/about/setting/setting.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+<!-- 土壤温度 -->
+<form>
+  <view class="cu-form-group margin-top justify-start">
+    <view class="title" style="font-size: medium;font-weight: bold;">1.</view>
+    <view class='cu-tag round radius text-lg text-black line-gray' style="width: 400rpx;font-weight: bold;">土壤温度</view>
+  </view>
+  <view class="cu-form-group ">
+    <view style="font-weight: bold;font-size:medium">最高预警值</view>
+    <button class="line-green cu-btn sm" data-mode="temp" bind:tap="cleanMaxValue">清除</button>
+    <view class="flex solid-bottom padding justify-end" >
+      <button data-mode="max"  bind:tap="decTempValue">-</button>
+      <input type="number" style="width:70rpx;align-self: center;margin-left: 20rpx;" data-mode="max" bindinput="inputTemp" value="{{maxTemp}}"></input>
+      <button data-mode="max" bind:tap="incTempValue">+</button>
+    </view>
+  </view>
+  <view class="cu-form-group ">
+    <view style="font-weight: bold;font-size:medium">最低预警值</view>
+    <button class="line-green cu-btn sm" data-mode="temp" bind:tap="cleanMinValue">清除</button>
+    <view class="flex solid-bottom padding justify-end">
+      <button data-mode="min"  bind:tap="decTempValue">-</button>
+      <input   type="number" style="width:70rpx;align-self: center;margin-left: 20rpx;" data-mode="min" bindinput="inputTemp" placeholder="{{minTemp}}"  value="{{minTemp}}"></input>
+      <button data-mode="min"  bind:tap="incTempValue">+</button>
+    </view>
+  </view>
+</form>
+<!-- 土壤湿度 -->
+<form>
+  <view class="cu-form-group margin-top justify-start">
+    <view class="title" style="font-size: medium;font-weight: bold;">2.</view>
+    <view class='cu-tag round radius text-lg text-black line-gray' style="width: 400rpx;font-weight: bold;">土壤湿度</view>
+  </view>
+  <view class="cu-form-group ">
+    <view style="font-weight: bold;font-size:medium">最高预警值</view>
+    <button class="line-green cu-btn sm" data-mode="hum" bind:tap="cleanMaxValue">清除</button>
+    <view class="flex solid-bottom padding justify-end" >
+      <button data-mode="max"  bind:tap="decHumValue">-</button>
+      <input value="{{maxHum}}" type="number" style="width:70rpx;align-self: center;margin-left: 20rpx;" data-mode="max" bindinput="inputHum" value="{{maxHum}}"></input>
+      <button data-mode="max" bind:tap="incHumValue">+</button>
+    </view>
+  </view>
+  <view class="cu-form-group ">
+    <view style="font-weight: bold;font-size:medium">最低预警值</view>
+    <button class="line-green cu-btn sm" data-mode="hum" bind:tap="cleanMinValue">清除</button>
+    <view class="flex solid-bottom padding justify-end">
+      <button data-mode="min"  bind:tap="decHumValue">-</button>
+      <input value="{{minHum}}" type="number" style="width:70rpx;align-self: center;margin-left: 20rpx;" data-mode="min" bindinput="inputHum" value="{{minHum}}"></input>
+      <button data-mode="min" bind:tap="incHumValue">+</button>
+    </view>
+  </view>
+</form>
+<!-- 气体浓度 -->
+<form>
+  <view class="cu-form-group margin-top justify-start">
+    <view class="title" style="font-size: medium;font-weight: bold;">3.</view>
+    <view class='cu-tag round radius text-lg text-black line-gray' style="width: 400rpx;font-weight: bold;">气体浓度</view>
+  </view>
+  <view class="cu-form-group ">
+    <view style="font-weight: bold;font-size:medium">最高预警值</view>
+    <button class="line-green cu-btn sm" data-mode="gas" bind:tap="cleanMaxValue">清除</button>
+    <view class="flex solid-bottom padding justify-end" >
+      <button data-mode="max"  bind:tap="decGasValue">-</button>
+      <input value="{{maxGas}}" type="number" style="width:70rpx;align-self: center;margin-left: 20rpx;" data-mode="max" bindinput="inputGas" value="{{maxGas}}"></input>
+      <button data-mode="max" bind:tap="incGasValue">+</button>
+    </view>
+  </view>
+  <view class="cu-form-group ">
+    <view style="font-weight: bold;font-size:medium">最低预警值</view>
+    <button class="line-green cu-btn sm" data-mode="gas" bind:tap="cleanMinValue">清除</button>
+    <view class="flex solid-bottom padding justify-end">
+      <button data-mode="min"  bind:tap="decGasValue">-</button>
+      <input value="{{minGas}}" type="number" style="width:70rpx;align-self: center;margin-left: 20rpx;" data-mode="min" bindinput="inputGas" value="{{minGas}}"></input>
+      <button data-mode="min" bind:tap="incGasValue">+</button>
+    </view>
+  </view>
+</form>
+<!-- 人体感应 -->
+<form>
+  <view class="cu-form-group margin-top justify-start">
+    <view class="title" style="font-size: medium;font-weight: bold;">3.</view>
+    <view class='cu-tag round radius text-lg text-black line-gray' style="width: 400rpx;font-weight: bold;">人体感应</view>
+    <view class="flex solid-bottom padding">
+      <switch :class="switchA?'checked':''  checkbox" :checked="switchA?true:false" bindchange="buzzerSwitch"></switch>
+    </view>
+  </view>
+</form>
+
+<form>
+  <view class="cu-form-group margin-top justify-center">
+    <button class="cu-btn bg-green shadow" bind:tap="saveSettings">保存设置</button>
+  </view>
+</form>
+</scroll-view>

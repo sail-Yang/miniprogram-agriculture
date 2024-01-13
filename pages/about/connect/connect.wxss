@@ -1,0 +1,44 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+.service-connect-img {
+  width:300rpx;
+  height:300rpx;
+  /*去掉导航栏前100rpx，去掉导航栏后100+160=260rpx*/
+  margin-top:10rpx;
+}
+
+.service-connect-motto-svg {
+  width: 200rpx;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50rpx;
+}
+.service-connect-svg {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.service-connect-motto {
+  font-size:26rpx;
+  font-weight: lighter;
+  color: #a1a2c4;
+}
+
+.service-connect-button {
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+  width: 120rpx;
+  border-radius: 10px;
+  justify-content: center;
+}

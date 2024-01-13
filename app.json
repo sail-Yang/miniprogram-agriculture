@@ -1,0 +1,42 @@
+{
+  "cu-custom": "/colorui/components/cu-custom",
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/about/about",
+    "pages/about/connect/connect",
+    "pages/about/home/home",
+    "pages/about/about/about",
+    "pages/datareview/datareview",
+    "pages/about/setting/setting"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "智慧农业系统",
+    "navigationBarBackgroundColor": "#10CC7C"
+  },
+  "tabBar": {
+    "color": "#919191",
+    "selectedColor": "#0d1214",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/assets/images/icon_component.png",
+        "selectedIconPath": "/assets/images/icon_component_HL.png",
+        "text": "主控台"
+      },
+      {
+        "pagePath": "pages/about/home/home",
+        "iconPath": "/assets/images/icon_cloud.png",
+        "selectedIconPath": "/assets/images/icon_cloud_HL.png",
+        "text": "设置"
+      }
+    ]
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

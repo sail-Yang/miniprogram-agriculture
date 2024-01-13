@@ -1,0 +1,10 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}"></cu-custom>
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于智慧农业系统</view>
+  <view class='text-content'>
+    <view>Hi！欢迎使用智慧农业系统！</view>
+    <view class='margin-top-sm'>智慧农业物联网系统是一种利用物联网技术和传感器设备对农业生产环境进行实时监测、数据采集和分析的系统。通过在农田、温室或养殖场等地部署传感器节点，系统可以实时监测土壤温度、湿度、光照强度、空气质量等环境参数，并将采集到的数据通过无线网络传输到小程序进行存储和分析。</view>
+    <view class='margin-top-sm'>智慧农业物联网系统可以帮助农民实现精准农业管理，根据实时数据调整灌溉、施肥和防治病虫害的措施，提高农作物的产量和质量。同时，系统还可以提供远程监控和智能预警功能，及时发现并处理农田环境变化和异常情况，减少损失并提高农业生产效率。</view>
+    <view class='margin-top-sm'>小组成员：周楷博、杨帆、朱已轩、邹学文、伏涛、尹申奥</view>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+<!--pages/about/connect/connect.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="cu-card case">
+    <view class="cu-item shadow">
+      <view  wx:if="{{isConnected == false}}" class="flex flex-direction: row align-center justify-center ">
+        <image class="service-connect-img" src="/assets/images/unconnected.png" mode="aspectFit"></image>
+        <view class="service-connect-motto-svg">
+          <image class="service-connect-svg" src="/assets/icons/failure.svg"></image>
+          <view class="text-df text-center text-grey">设备未连接</view>
+        </view>
+      </view>
+      <view  wx:else class="flex flex-direction: row align-center justify-center ">
+        <image class="service-connect-img" src="/assets/images/connected.png" mode="aspectFit"></image>
+        <view class="service-connect-motto-svg">
+          <image class="service-connect-svg" src="/assets/icons/success.svg"></image>
+          <view class="text-df text-center text-green">设备已连接</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-card case">
+    <view class="cu-item shadow">
+      <form>
+        <view class="cu-form-group">
+          <view class="title">设备地址</view>
+          <input placeholder="请输入IP地址" value="{{ipAddress}}" bindinput="updateIpAddress"></input>
+        </view>
+        <view class="cu-form-group">
+          <view class="title">设备端口</view>
+          <input placeholder="请输入端口" value="{{port}}" bindinput="updatePort"></input>
+          <button class="cu-btn bg-green shadow" loading="{{connectLoading}}" disable="{{noCanClickConnectBtton}}" bind:tap="testConnectDeviceByTCP">连接设备</button>
+        </view>
+      </form>
+    </view>
+  </view>
+</scroll-view>

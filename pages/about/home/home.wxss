@@ -1,0 +1,42 @@
+.top-bg {
+  /* background-image: "/assets/images/background_about.png"; */
+  height: 400rpx;
+}
+
+.gif-wave{
+  position: absolute;
+  width: 100%;
+  bottom: 55%;
+  left: 0;
+  z-index: 99;
+  mix-blend-mode: screen;  
+  height: 100rpx;   
+}
+
+.background-image {
+  height : 100%;
+  position: relative;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+}
+
+map,.mapBox{
+  left: 0;
+  z-index: 99;
+  mix-blend-mode: screen;  
+  height: 100rpx;   
+}
+
+map,.mapBox{
+  width: 750rpx;
+  height: 300rpx;
+}
+
+.center_view {
+  display: flex;    /*设置显示样式**/
+  align-items: center;    /**子view垂直居中*/
+  vertical-align: center; /**垂直居中*/
+  justify-content: center; /**内容居中*/
+  flex-direction:row; 
+}

@@ -1,0 +1,75 @@
+<!--pages/datareview/datareview.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="cu-card case">
+    <view class="cu-item shadow">
+      <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler"></canvas>
+    </view>
+    <view class="cu-item shadow">
+      <view class="padding flex text-center text-grey bg-white shadow-warp">
+        <view class="flex flex-sub flex-direction solid-right justify-center align-center">
+          <view class="flex justify-center align-center">
+            <view class="text-xxl text-blue  flex-sub text-right">{{minValue}}</view>
+            <view class="text-df text-grey  flex-sub text-left">{{unit}}</view>
+          </view>
+          <view class="margin-top-sm">
+            <text class="text-grey text-sm">最低值</text>
+          </view>
+        </view>
+        <view class="flex flex-sub flex-direction solid-right justify-center align-center">
+          <view class="flex justify-center align-center">
+            <view class="text-xxl text-green  flex-sub text-right">{{averageValue}}</view>
+            <view class="text-df text-grey  flex-sub text-left">{{unit}}</view>
+          </view>
+          <view class="margin-top-sm">
+            <text class="text-grey text-sm">平均值</text>
+          </view>
+        </view>
+        <view class="flex flex-sub flex-direction solid-right justify-center align-center">
+          <view class="flex justify-center align-center">
+            <view class="text-xxl text-red flex-sub text-right">{{maxValue}}</view>
+            <view class="text-df text-grey  flex-sub text-left">{{unit}}</view>
+          </view>
+          <view class="margin-top-sm">
+            <text class="text-grey text-sm">最高值</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-list grid col-3 no-border justify-center align-center">
+    <view class="cu-item justify-center align-center">
+      <view wx:if="{{isTemp == false}}">
+        <view data-mode="temp" bind:tap="switchMode">
+          <image class="service-connect-svg margin-bottom-sm" src="../../assets/icons/temp.svg" mode="aspectFit"></image>
+          <view class="text-grey">环境温度</view>
+        </view>
+      </view>
+      <view wx:else>
+        <image class="service-connect-svg margin-bottom-sm" src="../../assets/icons/temp_green.svg" mode="aspectFit"></image>
+        <view class="text-green">环境温度</view>
+      </view>
+    </view>
+    <view class="cu-item justify-center align-center">
+      <view wx:if="{{isHum == false}}">
+        <view data-mode="hum" bind:tap="switchMode">
+          <image class="service-connect-svg margin-bottom-sm" src="../../assets/icons/hum.svg" mode="aspectFit"></image>
+          <view class="text-grey">环境湿度</view>
+        </view>
+      </view>
+      <view wx:else>
+        <image class="service-connect-svg margin-bottom-sm" src="../../assets/icons/hum_green.svg" mode="aspectFit"></image>
+        <view class="text-green">环境湿度</view>
+      </view>
+    </view>
+    <view wx:if="{{isGas == false}}">
+      <view data-mode="gas" bind:tap="switchMode">
+        <image class="service-connect-svg margin-bottom-sm" src="../../assets/icons/gas.svg" mode="aspectFit"></image>
+        <view class="text-grey">气体浓度</view>
+      </view>
+    </view>
+    <view wx:else>
+      <image class="service-connect-svg margin-bottom-sm" src="../../assets/icons/gas_green.svg" mode="aspectFit"></image>
+      <view class="text-green">气体浓度</view>
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,8 @@
+/* pages/datareview/datareview.wxss */
+.canvas {
+  height: 650rpx;
+}
+.service-connect-svg {
+  width: 40rpx;
+  height: 40rpx;
+}
